@@ -1,0 +1,34 @@
+﻿<UserControl x:Class="Rzr.Core.Editors.Conditions.ExistingConditionSelector"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:conditions="clr-namespace:Rzr.Core.Editors.Conditions">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="5"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="5"/>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="5"/>
+            <RowDefinition Height="40"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="5"/>
+            <ColumnDefinition Width="500"/>
+            <ColumnDefinition Width="5"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <ListBox Grid.Row="2" Grid.Column="2" Name="ConditionList" ItemsSource="{Binding}" DataContext="{Binding Path=Conditions}">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <conditions:ExistingConditionListing DataContext="{Binding}"/>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+        <Button Grid.Row="4" Grid.Column="2" Content="Return" Click="ExitNoSave"
+                Style="{Binding Resources[ButtonStyle2], RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}}"/>
+    </Grid>
+</UserControl>

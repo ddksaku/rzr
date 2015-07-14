@@ -1,0 +1,38 @@
+﻿<UserControl x:Class="Rzr.Core.Editors.Conditions.SubConditionRadioEditor"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:conditions="clr-namespace:Rzr.Core.Editors.Conditions">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="28"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="3"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="3"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="5"/>
+            <ColumnDefinition Width="30"/>
+            <ColumnDefinition Width="3"/>
+        </Grid.ColumnDefinitions>
+        <Label Grid.Row="0" Grid.Column="1" Content="{Binding Path=Name}" Foreground="White"/>
+        <CheckBox Grid.Row="0" Grid.Column="3" IsChecked="{Binding Path=IsSelected}" Margin="4,5,4,0" Unchecked="OnChecked" Checked="OnChecked"/>
+        <Border Name="OptionsBorder" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="3" Style="{Binding Resources[SubPanel1], 
+            RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}}">
+            <ItemsControl Name="Options" ItemsSource="{Binding}" DataContext="{Binding Path=Items}">
+                <ItemsControl.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <UniformGrid IsItemsHost="True" Columns="1" />
+                    </ItemsPanelTemplate>
+                </ItemsControl.ItemsPanel>
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <conditions:SubConditionRadioItem DataContext="{Binding}" Height="Auto"/>
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+            </ItemsControl>
+        </Border>
+    </Grid>
+</UserControl>

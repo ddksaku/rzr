@@ -1,0 +1,34 @@
+﻿<UserControl x:Class="Rzr.Core.Tree.BetTreeNodeTypeSelector"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" >
+    <Grid MaxHeight="26">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="22" MaxWidth="22"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="26" MaxHeight="26"/>
+        </Grid.RowDefinitions>
+        <Button Click="SelectType" Grid.Row="0" Grid.Column="0" Height="22" Width="22" VerticalAlignment="Center" BorderBrush="Blue">
+            <Image Source="{Binding Path=Data.Icon}" />
+        </Button>
+        <ItemsControl Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Visibility="Hidden" HorizontalAlignment="Left" Name="Options" ItemsSource="{Binding}" DataContext="{Binding Path=AllowedNodeTypes}">
+            <ItemsControl.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <StackPanel Orientation="Horizontal"/>
+                </ItemsPanelTemplate>
+            </ItemsControl.ItemsPanel>
+            <ItemsControl.ItemTemplate>
+                <DataTemplate>
+                    <Border Background="Black" Padding="2">
+                        <Button Click="SetType" Height="22" Width="22" BorderBrush="Blue">
+                            <Image Source="{Binding Path=Model.Icon}" ToolTip="{Binding Path=Name}"/>
+                        </Button>
+                    </Border>
+                </DataTemplate>
+            </ItemsControl.ItemTemplate>
+        </ItemsControl>
+    </Grid>
+</UserControl>

@@ -1,0 +1,51 @@
+﻿<UserControl x:Class="Rzr.Core.Editors.Board.BoardEditor"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:editors="clr-namespace:Rzr.Core.Editors"
+             xmlns:controls="clr-namespace:Rzr.Core.Controls">
+    <Border Grid.Row="0" Grid.Column="0" Grid.RowSpan="4" Style="{Binding Resources[PanelBorderOuter], 
+        RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}}">
+        <Border Grid.Row="0" Grid.Column="0" Grid.RowSpan="4" Style="{Binding Resources[PanelBorderInner], 
+            RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}}">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="10" />
+                    <ColumnDefinition Width="38" />
+                    <ColumnDefinition Width="10" />
+                    <ColumnDefinition Width="38" />
+                    <ColumnDefinition Width="10" />
+                    <ColumnDefinition Width="38" />
+                    <ColumnDefinition Width="10" />
+                    <ColumnDefinition Width="38" />
+                    <ColumnDefinition Width="10" />
+                    <ColumnDefinition Width="38" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="90" />
+                    <ColumnDefinition Width="0" />
+                    <ColumnDefinition Width="10" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="10"/>
+                    <RowDefinition Height="60"/>
+                    <RowDefinition Height="5"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="5"/>
+                </Grid.RowDefinitions>
+                <editors:CardEditor Grid.Row="1" Grid.Column="1" x:Name="Card1"/>
+                <editors:CardEditor Grid.Row="1" Grid.Column="3" x:Name="Card2"/>
+                <editors:CardEditor Grid.Row="1" Grid.Column="5" x:Name="Card3"/>
+                <editors:CardEditor Grid.Row="1" Grid.Column="7" x:Name="Card4"/>
+                <editors:CardEditor Grid.Row="1" Grid.Column="9" x:Name="Card5"/>
+                <Button Grid.Row="1" Grid.Column="11" x:Name="BoardButton" Content="FINISHED" 
+                        Click="FinishedSelecting" Visibility="Hidden" Style="{Binding Resources[ButtonStyle2], 
+                        RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}}"/>
+                <Button Grid.Row="1" Grid.Column="11" x:Name="CalculateButton" Content="CALCULATE" 
+                        Click="OnCalculate" Style="{Binding Resources[ButtonStyle2], 
+                        RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}}"/>
+                <controls:CardSelectionControl Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="12" x:Name="CardSelection" />
+            </Grid>
+        </Border>
+    </Border>
+</UserControl>

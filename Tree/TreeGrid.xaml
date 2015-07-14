@@ -1,0 +1,40 @@
+﻿<UserControl x:Class="Rzr.Core.Tree.TreeGrid"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:tree="clr-namespace:Rzr.Core.Tree">
+    <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">
+        <Grid x:Name="Holder">
+            <Grid.RowDefinitions>
+                <RowDefinition x:Name="Header" Height="40"/>
+                <RowDefinition x:Name="Body" Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition x:Name="Base" Width="0"/>
+                <ColumnDefinition x:Name="Preflop" Width="40*"/>
+                <ColumnDefinition x:Name="Flop" Width="40*"/>
+                <ColumnDefinition x:Name="Turn" Width="40*"/>
+                <ColumnDefinition x:Name="River" Width="40*"/>
+                <ColumnDefinition x:Name="Results" Width="0"/>
+            </Grid.ColumnDefinitions>
+            <Label Grid.Row="0" Grid.Column="0" Content="Base"/>
+            <Label Grid.Row="0" Grid.Column="1" Content="Preflop"/>
+            <Label Grid.Row="0" Grid.Column="2" Content="Flop"/>
+            <Label Grid.Row="0" Grid.Column="3" Content="Turn"/>
+            <Label Grid.Row="0" Grid.Column="4" Content="River"/>
+            <Label Grid.Row="0" Grid.Column="5" Content="Results"/>  
+            <Border Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="6" BorderBrush="Black" BorderThickness="1"></Border>
+            <Border Grid.Row="0" Grid.Column="0" Grid.RowSpan="2" BorderBrush="Gray" BorderThickness="0,0,1,0"></Border>
+            <Border Grid.Row="0" Grid.Column="1" Grid.RowSpan="2" BorderBrush="Gray" BorderThickness="0,0,1,0"></Border>
+            <Border Grid.Row="0" Grid.Column="2" Grid.RowSpan="2" BorderBrush="Gray" BorderThickness="0,0,1,0"></Border>
+            <Border Grid.Row="0" Grid.Column="3" Grid.RowSpan="2" BorderBrush="Gray" BorderThickness="0,0,1,0"></Border>
+            <Border Grid.Row="0" Grid.Column="4" Grid.RowSpan="2" BorderBrush="Gray" BorderThickness="0,0,1,0"></Border>
+            <Canvas x:Name="UnderlayCanvas" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="4" />
+            <Canvas x:Name="PreflopCanvas" Grid.Row="1" Grid.Column="1" VerticalAlignment="Top"/>
+            <Canvas x:Name="FlopCanvas" Grid.Row="1" Grid.Column="2" VerticalAlignment="Top"/>
+            <Canvas x:Name="TurnCanvas" Grid.Row="1" Grid.Column="3" VerticalAlignment="Top"/>
+            <Canvas x:Name="RiverCanvas" Grid.Row="1" Grid.Column="4" VerticalAlignment="Top"/>
+        </Grid>
+    </ScrollViewer>
+</UserControl>

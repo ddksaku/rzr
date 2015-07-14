@@ -1,0 +1,16 @@
+﻿<UserControl x:Class="Rzr.Core.Tree.DataEditors.PreflopRangeEditor"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:range="clr-namespace:Rzr.Core.Editors.HandRange">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <range:HandRangeEditor Grid.Row="0" Grid.Column="0" x:Name="RangeEditor"/>
+    </Grid>
+</UserControl>

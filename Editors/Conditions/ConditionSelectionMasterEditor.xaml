@@ -1,0 +1,24 @@
+﻿<UserControl x:Class="Rzr.Core.Editors.Conditions.ConditionSelectionMasterEditor"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:conditions="clr-namespace:Rzr.Core.Editors.Conditions">
+    <Border Grid.Row="0" Grid.Column="0" Grid.RowSpan="3" Grid.ColumnSpan="3" 
+            Style="{Binding Resources[EditorBackground], RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}}">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="5"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="5"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="5"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="5"/>
+            </Grid.ColumnDefinitions>        
+            <conditions:ConditionSelector x:Name="Selector" Grid.Row="1" Grid.Column="1" Visibility="Visible"/>
+            <conditions:ConditionEditor x:Name="Editor" Grid.Row="1" Grid.Column="1" Visibility="Hidden"/>
+        </Grid>
+    </Border>
+</UserControl>

@@ -1,0 +1,93 @@
+﻿<UserControl x:Class="Rzr.Core.Editors.Conditions.ConditionSelector"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:conditions="clr-namespace:Rzr.Core.Editors.Conditions">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="100"/>
+            <RowDefinition Height="45"/>
+            <RowDefinition Height="45"/>
+            <RowDefinition Height="45"/>
+            <RowDefinition Height="45"/>
+            <RowDefinition Height="45"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="440"/>
+            <ColumnDefinition Width="10"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="5"/>
+            <ColumnDefinition Width="60"/>
+            <ColumnDefinition Width="5"/>
+            <ColumnDefinition Width="70"/>
+        </Grid.ColumnDefinitions>
+        <Border Grid.Row="0" Grid.Column="0" Grid.RowSpan="8" Style="{Binding Resources[PanelBorderOuter], 
+            RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}}">
+            <Border Style="{Binding Resources[PanelBorderInner], 
+                    RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}}">
+                <ScrollViewer>
+                    <ItemsControl Name="Options" ItemsSource="{Binding}" DataContext="{Binding Path=Conditions}"                      
+                                PreviewMouseLeftButtonDown="ListMouseDown" PreviewMouseMove="ListMouseMove" PreviewMouseLeftButtonUp="ListMouseUp" AllowDrop="True">
+                        <ItemsControl.ItemsPanel>
+                            <ItemsPanelTemplate>
+                                <StackPanel Orientation="Vertical"/>
+                            </ItemsPanelTemplate>
+                        </ItemsControl.ItemsPanel>
+                        <ItemsControl.ItemTemplate>
+                            <DataTemplate>
+                                <conditions:AvailableConditionListing DataContext="{Binding}" />
+                            </DataTemplate>
+                        </ItemsControl.ItemTemplate>
+                    </ItemsControl>
+                </ScrollViewer>
+            </Border>
+        </Border>
+        <Border Grid.Row="0" Grid.Column="2" Grid.ColumnSpan="4"
+                Style="{Binding Resources[TitleStyle1], RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}}">
+            <Label x:Name="Title" Content="{Binding Path=Service.Name}" 
+                   Style="{Binding Resources[LabelStyle1], RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}}"/>
+        </Border>
+        <Button Grid.Row="0" Grid.Column="6" Content="Change" Click="EditBase" Height="30"
+                Style="{Binding Resources[ButtonStyle2], RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}}"/>
+        <Border Grid.Row="1" Grid.Column="2" Grid.ColumnSpan="6"
+                Style="{Binding Resources[DescriptionStyle1], RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}}">
+            <TextBlock>
+            You can add or edit individual conditions or drag and drop them into a different order. Items at the top have greatest priority and items at the bottom have lowest.                
+            </TextBlock>
+        </Border>
+        <TextBlock Grid.Row="2" Grid.Column="2" Grid.ColumnSpan="4" Padding="4" VerticalAlignment="Center">
+            Add a new item to the list
+        </TextBlock>
+        <Button Grid.Row="2" Grid.Column="6" Content="Add" Click="AddItem" Height="30"
+                Style="{Binding Resources[ButtonStyle2], RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}}"/>
+        <TextBlock Grid.Row="3" Grid.Column="2" Grid.ColumnSpan="4" Padding="4" VerticalAlignment="Center">
+                Save all your changes and exit
+        </TextBlock>
+        <Button Grid.Row="3" Grid.Column="6" Content="Save" Click="Save" Height="30"
+                Style="{Binding Resources[ButtonStyle2], RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}}"/>
+        <TextBlock Grid.Row="4" Grid.Column="2" Grid.ColumnSpan="4" Padding="4" VerticalAlignment="Center">
+            Cancel all your changes and exit
+        </TextBlock>
+        <Button Grid.Row="4" Grid.Column="6" Content="Cancel" Click="Cancel" Height="30"
+                Style="{Binding Resources[ButtonStyle2], RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}}"/>
+        <TextBlock Grid.Row="6" Grid.Column="2" Grid.ColumnSpan="4" Padding="4" VerticalAlignment="Center">
+                Calculate and distribute percentages
+        </TextBlock>
+        <Button Grid.Row="6" Grid.Column="6" Content="Distribute" Click="Distribute" Height="30"
+                Style="{Binding Resources[ButtonStyle2], RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}}"/>
+        <Border Grid.Row="0" Grid.Column="0" x:Name="Overlay" Grid.RowSpan="6" Grid.ColumnSpan="7" Background="Black" Opacity="0.7" Visibility="Hidden"/>
+        <ComboBox Grid.Row="0" Grid.Column="2" x:Name="AvailableItems" Visibility="Hidden" 
+                  ItemsSource="{Binding Path=AvailableRanges}"                   
+                  SelectedItem="{Binding Path=SelectedRange}"/>
+        <TextBox Grid.Row="0" Grid.Column="2" x:Name="NewTitle" Visibility="Hidden" Text="{Binding Path=Service.Name}" Background="White"/>
+        <Button Grid.Row="0" Grid.Column="4" x:Name="SaveButton" Content="Save" Click="SaveBase" Visibility="Hidden"
+                Style="{Binding Resources[ButtonStyle2], RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}}"/>
+        <Button Grid.Row="0" Grid.Column="6" x:Name="CancelButton" Content="Cancel" Click="CancelBase" Visibility="Hidden"
+                Style="{Binding Resources[ButtonStyle2], RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}}"/>
+        <Button Grid.Row="0" Grid.Column="4" x:Name="SaveNewButton" Content="Save" Click="SaveNewBase" Visibility="Hidden"
+                Style="{Binding Resources[ButtonStyle2], RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}}"/>
+    </Grid>
+</UserControl>

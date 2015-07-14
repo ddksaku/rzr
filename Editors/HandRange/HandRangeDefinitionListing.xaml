@@ -1,0 +1,23 @@
+﻿<UserControl x:Class="Rzr.Core.Editors.HandRange.HandRangeDefinitionListing"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008">
+    <Border CornerRadius="4" Background="{Binding Path=Background}" BorderBrush="White" BorderThickness="1" Margin="2,2,4,2">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="0" x:Name="InsertHere"/>
+                <RowDefinition Height="24"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="7*"/>
+                <ColumnDefinition Width="3*"/>
+            </Grid.ColumnDefinitions>
+            <Border CornerRadius="6" Background="#777" BorderBrush="Black" BorderThickness="1" Grid.Row="0" Grid.Column="0">
+            </Border>
+            <Label Grid.Row="1" Grid.Column="0" Content="{Binding Path=Description}" />
+            <TextBox Name="txtRankValue" Grid.Row="1" Grid.Column="1" Text="{Binding Path=Value}" LostFocus="txtRankValue_LostFocus" 
+                     Style="{Binding Resources[TextBoxStyle1], RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}}"/>
+        </Grid>
+    </Border>
+</UserControl>

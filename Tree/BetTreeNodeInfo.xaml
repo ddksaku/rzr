@@ -1,0 +1,19 @@
+﻿<UserControl x:Class="Rzr.Core.Tree.BetTreeNodeInfo"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:tree="clr-namespace:Rzr.Core.Tree"
+             Width="100" Height="24">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="24"></RowDefinition>
+            <RowDefinition Height="{Binding Path=ResultsHeight}"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="100"/>
+        </Grid.ColumnDefinitions>
+        <TextBlock Grid.Row="0" Grid.Column="0" Height="20" Foreground="Black" Text="{Binding Path=DisplayText}" VerticalAlignment="Center" FontFamily="Candara"/>
+        <tree:BetTreeNodeResultsDisplay Grid.Row="1" Grid.Column="0" x:Name="Results"/>
+    </Grid>
+</UserControl>

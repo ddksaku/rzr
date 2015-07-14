@@ -1,0 +1,165 @@
+﻿<UserControl x:Class="Rzr.Core.Tree.BetControls"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008">
+    <UserControl.Resources>
+        <Style x:Key="RoundedButton" TargetType="Button">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border CornerRadius="8" BorderThickness="1" BorderBrush="#030903">
+                            <Border.Background>
+                                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                    <GradientStop Color="#143B14" Offset="0" />
+                                    <GradientStop Color="#030903" Offset="1" />
+                                </LinearGradientBrush>
+                            </Border.Background>
+                            <Border.BitmapEffect>
+                                <BevelBitmapEffect BevelWidth="5" EdgeProfile="CurvedOut" LightAngle="135" Relief="0.1" Smoothness="1" />
+                            </Border.BitmapEffect>
+                            <ContentPresenter Name="BtnContent" VerticalAlignment="Center" HorizontalAlignment="Center" ContentSource="Content" />
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style x:Key="BetButton" TargetType="Button">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border CornerRadius="4" BorderThickness="1" BorderBrush="#B28282">
+                            <Border.Background>
+                                <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+                                    <GradientStop Color="#CCCCFF" Offset="0.0" />
+                                    <GradientStop Color="#AAAADD" Offset="0.2" />
+                                    <GradientStop Color="#AAAADD" Offset="0.8" />
+                                    <GradientStop Color="#8888CC" Offset="1.0" />
+                                </LinearGradientBrush>
+                            </Border.Background>
+                            <Border.BitmapEffect>
+                                <BevelBitmapEffect BevelWidth="5" EdgeProfile="CurvedOut" LightAngle="135" Relief="0.1" Smoothness="1" />
+                            </Border.BitmapEffect>
+                            <ContentPresenter Name="BtnContent" VerticalAlignment="Center" HorizontalAlignment="Center" ContentSource="Content" />
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style x:Key="SelectedBetButton" TargetType="Button">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border CornerRadius="4" BorderThickness="2" BorderBrush="White">
+                            <Border.Background>
+                                <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+                                    <GradientStop Color="#DDDDFF" Offset="0.0" />
+                                    <GradientStop Color="#CCCCEE" Offset="0.2" />
+                                    <GradientStop Color="#CCCCEE" Offset="0.8" />
+                                    <GradientStop Color="#BBBBDD" Offset="1.0" />
+                                </LinearGradientBrush>
+                            </Border.Background>
+                            <Border.BitmapEffect>
+                                <BevelBitmapEffect BevelWidth="5" EdgeProfile="CurvedOut" LightAngle="135" Relief="0.1" Smoothness="1" />
+                            </Border.BitmapEffect>
+                            <ContentPresenter Name="BtnContent" VerticalAlignment="Center" HorizontalAlignment="Center" ContentSource="Content" />
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </UserControl.Resources>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="5"/>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="5"/>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="5"/>
+            <RowDefinition Height="20"/>
+            <RowDefinition Height="5"/>
+            <RowDefinition Height="20"/>
+            <RowDefinition Height="5"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="20" />
+            <ColumnDefinition Width="70" />
+            <ColumnDefinition Width="10" />
+            <ColumnDefinition Width="80" />
+            <ColumnDefinition Width="10" />
+            <ColumnDefinition Width="90" />
+            <ColumnDefinition Width="10" />
+            <ColumnDefinition Width="40" />
+            <ColumnDefinition Width="5" />
+            <ColumnDefinition Width="35" />
+            <ColumnDefinition Width="5" />
+            <ColumnDefinition Width="35" />
+            <ColumnDefinition Width="5" />
+            <ColumnDefinition Width="35" />
+            <ColumnDefinition Width="5" />
+        </Grid.ColumnDefinitions>
+        <Grid Grid.Row="1" Grid.Column="1" Grid.RowSpan="3" Grid.ColumnSpan="9" x:Name="ReportGrid">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="2"/>
+                <RowDefinition Height="20"/>
+                <RowDefinition Height="0"/>
+                <RowDefinition Height="20"/>
+                <RowDefinition Height="0"/>
+                <RowDefinition Height="20"/>
+                <RowDefinition Height="2"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="4"></ColumnDefinition>
+                <ColumnDefinition Width="55"></ColumnDefinition>
+                <ColumnDefinition Width="0"></ColumnDefinition>
+                <ColumnDefinition Width="55"></ColumnDefinition>
+                <ColumnDefinition Width="0"></ColumnDefinition>
+                <ColumnDefinition Width="55"></ColumnDefinition>
+                <ColumnDefinition Width="0"></ColumnDefinition>
+                <ColumnDefinition Width="55"></ColumnDefinition>
+                <ColumnDefinition Width="0"></ColumnDefinition>
+                <ColumnDefinition Width="55"></ColumnDefinition>
+                <ColumnDefinition Width="0"></ColumnDefinition>
+                <ColumnDefinition Width="55"></ColumnDefinition>
+                <ColumnDefinition Width="18"></ColumnDefinition>
+                <ColumnDefinition Width="32"></ColumnDefinition>
+                <ColumnDefinition Width="2"></ColumnDefinition>
+                <ColumnDefinition Width="32"></ColumnDefinition>
+                <ColumnDefinition Width="2"></ColumnDefinition>
+                <ColumnDefinition Width="32"></ColumnDefinition>
+                <ColumnDefinition Width="2"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+        </Grid>
+
+        <TextBlock Grid.Row="1" Grid.Column="10" Grid.RowSpan="3" Grid.ColumnSpan="4" FontSize="12" FontFamily="Georgia"
+                   x:Name="PotLabel" Padding="0, 25, 0, 10"/>
+        <Button Grid.Row="5" Grid.RowSpan="3" Grid.Column="1" Style="{StaticResource BetButton}" Content="Fold" 
+                x:Name="FoldButton" HorizontalAlignment="Center" FontFamily="Verdana" FontSize="13" 
+                FontWeight="Bold" Click="Fold" Width="70" Height="40"/>
+        <Button Grid.Row="5" Grid.RowSpan="3" Grid.Column="3" Style="{StaticResource BetButton}" Content="Check" 
+                x:Name="CheckButton" HorizontalAlignment="Center" FontFamily="Verdana" FontSize="13" 
+                FontWeight="Bold" Click="Check" Width="80" Height="40"/>
+        <Button Grid.Row="5" Grid.RowSpan="3" Grid.Column="3" Style="{StaticResource BetButton}" Content="Call" 
+                x:Name="CallButton" HorizontalAlignment="Center" FontFamily="Verdana" FontSize="13" 
+                FontWeight="Bold" Click="Call" Width="80" Height="40"/>
+        <Button Grid.Row="5" Grid.RowSpan="3" Grid.Column="5" Style="{StaticResource BetButton}" Content="Bet" 
+                x:Name="BetButton" HorizontalAlignment="Center" FontFamily="Verdana" FontSize="11" 
+                FontWeight="Bold" Click="Bet" Width="90" Height="40"/>
+        <Button Grid.Row="5" Grid.RowSpan="3" Grid.Column="5" Style="{StaticResource BetButton}" Content="Raise" 
+                x:Name="RaiseButton" HorizontalAlignment="Center" FontFamily="Verdana" FontSize="11" 
+                FontWeight="Bold" Click="Raise" Width="90" Height="40"/>
+        <Button Grid.Row="5" Grid.RowSpan="3" Grid.Column="5" Style="{StaticResource BetButton}" Content="Allin" 
+                x:Name="AllinButton" HorizontalAlignment="Center" FontFamily="Verdana" FontSize="11" 
+                FontWeight="Bold" Click="Allin" Width="90" Height="40"/>
+        <Button Grid.Row="5" Grid.Column="9" Content="50%" Foreground="White" Style="{StaticResource BetButton}"
+                FontFamily="Verdana" FontSize="10" Click="SetBet" x:Name="FiftyButton" />
+        <Button Grid.Row="5" Grid.Column="11" Content="65%" Foreground="White" Style="{StaticResource BetButton}"
+                FontFamily="Verdana" FontSize="10" Click="SetBet" x:Name="SixtyFiveButton"/>
+        <Button Grid.Row="5" Grid.Column="13" Content="80%" Foreground="White" Style="{StaticResource BetButton}"
+                FontFamily="Verdana" FontSize="10" Click="SetBet" x:Name="EightyButton"/>
+        <TextBox Grid.Row="5" Grid.Column="7" x:Name="BetInput" TextChanged="BetInputChanged" LostFocus="BetInputLostFocus" />
+        <Slider Grid.Row="7" Grid.Column="7" Grid.ColumnSpan="7" Foreground="White" x:Name="BetSlider" 
+                ValueChanged="BetSliderChanged"></Slider>
+    </Grid>
+</UserControl>

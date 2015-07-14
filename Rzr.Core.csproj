@@ -1,0 +1,889 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{A92DFCAF-EC8E-49FA-80CC-6BA3F199EDF0}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Rzr.Core</RootNamespace>
+    <AssemblyName>Rzr.Core</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Account\AccountService.cs" />
+    <Compile Include="Application\Widget.cs" />
+    <Compile Include="Application\WidgetModel.cs" />
+    <Compile Include="Application\WidgetWindow.cs" />
+    <Compile Include="Attributes.cs" />
+    <Compile Include="Calculator\CompiledCondition.cs" />
+    <Compile Include="Calculator\ConditionAtom.cs" />
+    <Compile Include="Calculator\ConditionContainer.cs" />
+    <Compile Include="Calculator\ConditionMap.cs" />
+    <Compile Include="Calculator\ConditionsDefinition.cs" />
+    <Compile Include="Calculator\HandMask.cs" />
+    <Compile Include="Calculator\HandValueRange.cs" />
+    <Compile Include="Calculator\MaskedEvaluator.cs" />
+    <Compile Include="Calculator\Pocket.cs" />
+    <Compile Include="Calculator\PreCalc\PreCalc.cs" />
+    <Compile Include="Calculator\PreCalc\PrecalcNutFlush.cs" />
+    <Compile Include="Calculator\PreCalc\PrecalcNutStraight.cs" />
+    <Compile Include="Calculator\PreCalc\PrecalcSecondFlush.cs" />
+    <Compile Include="Calculator\PreCalc\PrecalcSecondStraight.cs" />
+    <Compile Include="Calculator\PreCalc\PrecalcStraighRank.cs" />
+    <Compile Include="Calculator\PreCalc\PrecalcStraightDraw.cs" />
+    <Compile Include="Calculator\PreCalc\PrecalcTopFiveMask.cs" />
+    <Compile Include="Calculator\PreCalc\PrecalcTopMask.cs" />
+    <Compile Include="Calculator\RangeCalculatorResult.cs" />
+    <Compile Include="Calculator\RangeCalculatorService.cs" />
+    <Compile Include="Calculator\WebCalculatorService.cs" />
+    <Compile Include="Controls\PlayerNamePanel.cs" />
+    <Compile Include="Converters\BitmapConverter.cs" />
+    <Compile Include="Converters\VisibilityConverter.cs" />
+    <Compile Include="Editors\Conditions\AvailableConditionListingModel.cs" />
+    <Compile Include="Editors\Conditions\AvailableConditionListing.xaml.cs">
+      <DependentUpon>AvailableConditionListing.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Editors\Conditions\ComponentEditor.xaml.cs">
+      <DependentUpon>ComponentEditor.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Editors\Conditions\ComponentEditorModel.cs" />
+    <Compile Include="Editors\Conditions\ConditionComponentListing.xaml.cs">
+      <DependentUpon>ConditionComponentListing.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Editors\Conditions\ConditionComponentListingModel.cs" />
+    <Compile Include="Editors\Conditions\ConditionEditor.xaml.cs">
+      <DependentUpon>ConditionEditor.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Editors\Conditions\ConditionSelectionMasterEditor.xaml.cs">
+      <DependentUpon>ConditionSelectionMasterEditor.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Editors\Conditions\ConditionSelector.xaml.cs">
+      <DependentUpon>ConditionSelector.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Editors\Conditions\ConditionSelectionMasterModel.cs" />
+    <Compile Include="Editors\Conditions\ConditionSetupEditor.xaml.cs">
+      <DependentUpon>ConditionSetupEditor.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Editors\Conditions\ConditionSetupModel.cs" />
+    <Compile Include="Editors\Conditions\ConditionSelectorModel.cs" />
+    <Compile Include="Editors\Conditions\ExistingConditionListing.xaml.cs">
+      <DependentUpon>ExistingConditionListing.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Editors\Conditions\ExistingConditionListingModel.cs" />
+    <Compile Include="Editors\Conditions\ExistingConditionSelector.xaml.cs">
+      <DependentUpon>ExistingConditionSelector.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Editors\Conditions\ExistingConditionSelectorModel.cs" />
+    <Compile Include="Editors\Conditions\SubConditionRadioEditor.xaml.cs">
+      <DependentUpon>SubConditionRadioEditor.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Editors\Conditions\SubConditionRadioEditorModel.cs" />
+    <Compile Include="Editors\Conditions\SubConditionRadioItem.xaml.cs">
+      <DependentUpon>SubConditionRadioItem.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Editors\Conditions\SubConditionRadioItemModel.cs" />
+    <Compile Include="Editors\Conditions\SubConditionSectionModel.cs" />
+    <Compile Include="Editors\HandRange\HandDefinitionModel.cs" />
+    <Compile Include="Editors\HandRange\HandRangeDefinitionEditor.xaml.cs">
+      <DependentUpon>HandRangeDefinitionEditor.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Editors\HandRange\HandRangeDefinitionListing.xaml.cs">
+      <DependentUpon>HandRangeDefinitionListing.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Editors\HandRange\HandRangeDefinitionModel.cs" />
+    <Compile Include="Editors\HandRange\HandRangeDefinitionManager.xaml.cs">
+      <DependentUpon>HandRangeDefinitionManager.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Editors\HandRange\HandRangeDefinitionManagerModel.cs" />
+    <Compile Include="Editors\HandValue\HandValueEditor.xaml.cs">
+      <DependentUpon>HandValueEditor.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Editors\Partial\PartialPlayerValueEditor.xaml.cs">
+      <DependentUpon>PartialPlayerValueEditor.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Editors\Partial\PartialPlayerValueModel.cs" />
+    <Compile Include="Editors\Partial\PartialVariableEditor.xaml.cs">
+      <DependentUpon>PartialVariableEditor.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Editors\Partial\PartialVariableListEditor.xaml.cs">
+      <DependentUpon>PartialVariableListEditor.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Editors\Partial\PartialVariableListModel.cs" />
+    <Compile Include="Editors\Partial\PartialVariableModel.cs" />
+    <Compile Include="Editors\Player\PlayerPanel.xaml.cs">
+      <DependentUpon>PlayerPanel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Editors\Table\SeatModel.cs" />
+    <Compile Include="Editors\Table\TableModel.cs" />
+    <Compile Include="Editors\Table\TablePanel.xaml.cs">
+      <DependentUpon>TablePanel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Editors\Table\TablePlayerDetails.xaml.cs">
+      <DependentUpon>TablePlayerDetails.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Editors\Variables\Variable.cs" />
+    <Compile Include="Editors\Variables\VariableContainer.cs" />
+    <Compile Include="Editors\Variables\VariableContainerEditor.xaml.cs">
+      <DependentUpon>VariableContainerEditor.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Editors\Variables\VariableContainerGroupSelector.xaml.cs">
+      <DependentUpon>VariableContainerGroupSelector.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Editors\Variables\VariableEditor.xaml.cs">
+      <DependentUpon>VariableEditor.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Editors\Variables\VariableGroup.cs" />
+    <Compile Include="Editors\Variables\VariableGroupEditor.xaml.cs">
+      <DependentUpon>VariableGroupEditor.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Licensing\LicenseModel.cs" />
+    <Compile Include="Licensing\LicensePrompt.xaml.cs">
+      <DependentUpon>LicensePrompt.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Licensing\LicenseService.cs" />
+    <Compile Include="Log.cs" />
+    <Compile Include="Partials\DependencyObejct.cs" />
+    <Compile Include="Partials\PartialGenerator.cs" />
+    <Compile Include="Partials\PartialWizard.cs" />
+    <Compile Include="Partials\PreflopPartialWizard.cs" />
+    <Compile Include="Partials\PreflopPartialWizardHeroOnly.cs" />
+    <Compile Include="Records\HandRecordService.cs" />
+    <Compile Include="Tree\AddPartial.xaml.cs">
+      <DependentUpon>AddPartial.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Tree\BetControls.xaml.cs">
+      <DependentUpon>BetControls.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Tree\BetNodeEditorHeader.xaml.cs">
+      <DependentUpon>BetNodeEditorHeader.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Tree\BetNodeInfoView.cs" />
+    <Compile Include="Tree\BetTreeDataEvaluator.cs" />
+    <Compile Include="Tree\BetTreeDataNodeMeta.cs" />
+    <Compile Include="Tree\BetTreeNodeInfo.xaml.cs">
+      <DependentUpon>BetTreeNodeInfo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Tree\BetTreeNodeInfoModel.cs" />
+    <Compile Include="Tree\BetTreeNodePlayerInfoModel.cs" />
+    <Compile Include="Tree\BetTreeNodeResults.cs" />
+    <Compile Include="Tree\BetTreeNodeResultsDisplay.xaml.cs">
+      <DependentUpon>BetTreeNodeResultsDisplay.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Tree\BetTreeNodeStyle.cs" />
+    <Compile Include="Tree\BetTreeNodeTypeSelector.xaml.cs">
+      <DependentUpon>BetTreeNodeTypeSelector.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Tree\DataEditors\PostflopRangeEditor.xaml.cs">
+      <DependentUpon>PostflopRangeEditor.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Tree\DataEditors\PreflopRangeEditor.xaml.cs">
+      <DependentUpon>PreflopRangeEditor.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Tree\DataEvaluators\PostflopEvaluator.cs" />
+    <Compile Include="Tree\DataEvaluators\PreflopEvaluator.cs" />
+    <Compile Include="Tree\DataEvaluators\ResultsEvaluator.cs" />
+    <Compile Include="Tree\DataModels\BetConditionsModel.cs" />
+    <Compile Include="Calculator\BoardSummary.cs" />
+    <Compile Include="Calculator\CalculatorResult.cs" />
+    <Compile Include="Calculator\Evaluator.cs" />
+    <Compile Include="Calculator\HandRange.cs" />
+    <Compile Include="Calculator\HandSummary.cs" />
+    <Compile Include="Calculator\HoldemCalculator.cs" />
+    <Compile Include="Calculator\Iterator.cs" />
+    <Compile Include="Calculator\Parser.cs" />
+    <Compile Include="Controls\CardControl.cs" />
+    <Compile Include="Controls\CardSelectionControl.cs" />
+    <Compile Include="Controls\CardSelectionModel.cs" />
+    <Compile Include="Controls\ProgressBar.cs" />
+    <Compile Include="Controls\RangeSlider.cs" />
+    <Compile Include="Data\RangeDataItem.cs" />
+    <Compile Include="Calculator\Values.cs" />
+    <Compile Include="Calculator\WinOdds.cs" />
+    <Compile Include="Calculator\ConditionRecord.cs" />
+    <Compile Include="Calculator\ConditionService.cs" />
+    <Compile Include="Controls\ControlUtilities.cs" />
+    <Compile Include="Controls\DataButton.cs" />
+    <Compile Include="Controls\RangeKeyControl.cs" />
+    <Compile Include="Controls\RangeSelectionControl.cs" />
+    <Compile Include="Data\HandRangeItem.cs" />
+    <Compile Include="Data\HandValueDefinition.cs" />
+    <Compile Include="Data\HandValueRangeDefinition.cs" />
+    <Compile Include="Data\HandValueRangeItem.cs" />
+    <Compile Include="Data\HandValueRangeModel.cs" />
+    <Compile Include="Data\HoleCardDefinition.cs" />
+    <Compile Include="Data\HoleCardRangeDefinition.cs" />
+    <Compile Include="Data\RzrDataService.cs" />
+    <Compile Include="Editors\Board\BoardEditor.xaml.cs">
+      <DependentUpon>BoardEditor.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Editors\Board\BoardModel.cs" />
+    <Compile Include="Editors\CardEditor.xaml.cs">
+      <DependentUpon>CardEditor.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Editors\CardModel.cs" />
+    <Compile Include="Editors\Conditions\ConditionEditorModel.cs" />
+    <Compile Include="Editors\HandRange\HandRangeEditor.xaml.cs">
+      <DependentUpon>HandRangeEditor.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Data\HandRangeModel.cs" />
+    <Compile Include="Editors\LevelGrid\LevelGridButton.xaml.cs">
+      <DependentUpon>LevelGridButton.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Editors\LevelGrid\LevelGridElement.cs" />
+    <Compile Include="Editors\LevelGrid\LevelGridItem.cs" />
+    <Compile Include="Editors\LevelGrid\LevelGridLevel.cs" />
+    <Compile Include="Editors\LevelGrid\LevelGridModel.cs" />
+    <Compile Include="Editors\LevelGrid\MoveableButtonEditor.xaml.cs">
+      <DependentUpon>MoveableButtonEditor.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Editors\Player\PlayerModel.cs" />
+    <Compile Include="Enum.cs" />
+    <Compile Include="ErrorService.cs" />
+    <Compile Include="Events.cs" />
+    <Compile Include="Game\Card.cs" />
+    <Compile Include="Game\CardDenomination.cs" />
+    <Compile Include="Game\CardSuit.cs" />
+    <Compile Include="Game\Deck.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Records\BetRecord.cs" />
+    <Compile Include="Records\HandRecord.cs" />
+    <Compile Include="Results\ColumnHeaderCell.xaml.cs">
+      <DependentUpon>ColumnHeaderCell.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Results\ResultOptionsEditor.xaml.cs">
+      <DependentUpon>ResultOptionsEditor.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Results\ResultsCell.xaml.cs">
+      <DependentUpon>ResultsCell.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Results\ResultsCellColumnHeaderModel.cs" />
+    <Compile Include="Results\ResultsCellTableCellModel.cs" />
+    <Compile Include="Results\ResultsCellRowHeaderModel.cs" />
+    <Compile Include="Results\ResultsCellTableHeaderModel.cs" />
+    <Compile Include="Results\ResultsColumnModel.cs" />
+    <Compile Include="Results\ResultsOptionsModel.cs" />
+    <Compile Include="Results\ResultsRowModel.cs" />
+    <Compile Include="Results\ResultsTable.cs" />
+    <Compile Include="Results\ResultsCellModel.cs" />
+    <Compile Include="Results\ResultsTableGroup.cs" />
+    <Compile Include="Results\ResultsTableModel.cs" />
+    <Compile Include="Results\RowHeaderCell.xaml.cs">
+      <DependentUpon>RowHeaderCell.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Results\RowHeaderColumn.cs" />
+    <Compile Include="RzrConfiguration.cs" />
+    <Compile Include="RzrInit.cs" />
+    <Compile Include="RzrSession.cs" />
+    <Compile Include="RzrUserSettings.cs" />
+    <Compile Include="Strings.cs" />
+    <Compile Include="Tree\BetPolicy.cs" />
+    <Compile Include="Tree\BetPolicyService.cs" />
+    <Compile Include="Tree\BetSnapshot.cs" />
+    <Compile Include="Tree\BetTree.xaml.cs">
+      <DependentUpon>BetTree.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Tree\BetTreeEditor.cs" />
+    <Compile Include="Tree\BetTreeModel.cs" />
+    <Compile Include="Tree\BetTreeNode.xaml.cs">
+      <DependentUpon>BetTreeNode.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Tree\BetTreeNodeDataModel.cs" />
+    <Compile Include="Tree\BetTreeNodeModel.cs" />
+    <Compile Include="Tree\BetTreeNodeService.cs" />
+    <Compile Include="Tree\BetTreeNodeDisplay.cs" />
+    <Compile Include="Tree\DataModels\BetTypeModel.cs" />
+    <Compile Include="Tree\DataModels\DefaultNodeDataModel.cs" />
+    <Compile Include="Tree\DataModels\ManualResultsModel.cs" />
+    <Compile Include="Tree\DataModels\PostFlopBetModel.cs" />
+    <Compile Include="Tree\DataModels\PreflopBetModel.cs" />
+    <Compile Include="Tree\DataModels\ResultsModel.cs" />
+    <Compile Include="Tree\DataModels\RootNodeDataModel.cs" />
+    <Compile Include="Tree\DataModels\ShowdownModel.cs" />
+    <Compile Include="Tree\DefaultBetTreeNodeEditor.xaml.cs">
+      <DependentUpon>DefaultBetTreeNodeEditor.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Tree\HandSnapshotModel.cs" />
+    <Compile Include="Tree\ManualResultsEditor.xaml.cs">
+      <DependentUpon>ManualResultsEditor.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Tree\NodeEditorModel.cs" />
+    <Compile Include="Tree\NodeEnd.cs" />
+    <Compile Include="Tree\NodeLine.cs" />
+    <Compile Include="Tree\NodeStart.cs" />
+    <Compile Include="Tree\RandomBetModel.cs" />
+    <Compile Include="Tree\ResultNodeInfo.xaml.cs">
+      <DependentUpon>ResultNodeInfo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Tree\RootNodeInfo.xaml.cs">
+      <DependentUpon>RootNodeInfo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Tree\ShowdownNodeInfo.xaml.cs">
+      <DependentUpon>ShowdownNodeInfo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Tree\TreeGrid.xaml.cs">
+      <DependentUpon>TreeGrid.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Tree\TreeGridItem.xaml.cs">
+      <DependentUpon>TreeGridItem.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Tree\TreeGridStart.xaml.cs">
+      <DependentUpon>TreeGridStart.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Tree\ValueModel.cs" />
+    <Compile Include="Tree\WizardSettings.xaml.cs">
+      <DependentUpon>WizardSettings.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Tree\Xml\BetTreeInfoXml.cs" />
+    <Compile Include="Tree\Xml\BetTreeNodeBetXml.cs" />
+    <Compile Include="Tree\Xml\BetTreeNodeMetaXml.cs" />
+    <Compile Include="Tree\Xml\BetTreeNodeParmXml.cs" />
+    <Compile Include="Tree\Xml\BetTreeNodeXml.cs" />
+    <Compile Include="Tree\Xml\BetTreePlayerInfoXml.cs" />
+    <Compile Include="Tree\Xml\BetTreeXml.cs" />
+    <Compile Include="Utilities.cs" />
+    <Compile Include="WindowManager.cs" />
+    <Compile Include="Xml\ContainerXml.cs" />
+    <Compile Include="Xml\HoleCardRangesFile.cs" />
+    <Compile Include="Xml\Hook.cs" />
+    <Compile Include="Xml\OptionXml.cs" />
+    <Compile Include="Xml\Parameter.cs" />
+    <Compile Include="Xml\ParmXml.cs" />
+    <Compile Include="Xml\PlayerOptionSetXml.cs" />
+    <Compile Include="Xml\PlayerXml.cs" />
+    <Compile Include="Xml\ResultXml.cs" />
+    <Compile Include="Xml\SaveUtilities.cs" />
+    <Compile Include="Xml\SnapshotXml.cs" />
+    <Compile Include="Xml\TableXml.cs" />
+    <Compile Include="Xml\TreePartialContainer.cs" />
+    <Compile Include="Xml\TreePartialPlayerVariable.cs" />
+    <Compile Include="Xml\TreePartials.cs" />
+    <Compile Include="Xml\TreePartialVariableContainer.cs" />
+    <Compile Include="Xml\TreePartialVariableDefinition.cs" />
+    <Compile Include="Xml\VariableContainerXml.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="Editors\Board\BoardEditor.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Editors\CardEditor.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Editors\Conditions\AvailableConditionListing.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Editors\Conditions\ComponentEditor.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Editors\Conditions\ConditionComponentListing.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Editors\Conditions\ConditionEditor.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Editors\Conditions\ConditionSelectionMasterEditor.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Editors\Conditions\ConditionSelector.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Editors\Conditions\ConditionSetupEditor.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Editors\Conditions\ExistingConditionListing.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Editors\Conditions\ExistingConditionSelector.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Editors\Conditions\SubConditionRadioEditor.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Editors\Conditions\SubConditionRadioItem.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Editors\HandRange\HandRangeDefinitionEditor.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Editors\HandRange\HandRangeDefinitionListing.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Editors\HandRange\HandRangeDefinitionManager.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Editors\HandRange\HandRangeEditor.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Editors\HandValue\HandValueEditor.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Editors\LevelGrid\LevelGridButton.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Editors\LevelGrid\MoveableButtonEditor.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Editors\Partial\PartialPlayerValueEditor.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Editors\Partial\PartialVariableEditor.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Editors\Partial\PartialVariableListEditor.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Editors\Player\PlayerPanel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Editors\Table\TablePanel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Editors\Table\TablePlayerDetails.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Editors\Variables\VariableContainerEditor.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Editors\Variables\VariableContainerGroupSelector.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Editors\Variables\VariableEditor.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Editors\Variables\VariableGroupEditor.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Licensing\LicensePrompt.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Results\ColumnHeaderCell.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Results\ResultOptionsEditor.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Results\ResultsCell.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Results\RowHeaderCell.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Styles\BlackStyle.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Tree\AddPartial.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Tree\BetControls.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Tree\BetNodeEditorHeader.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Tree\BetTree.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Tree\BetTreeNode.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Tree\BetTreeNodeInfo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Tree\BetTreeNodeResultsDisplay.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Tree\BetTreeNodeTypeSelector.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Tree\DataEditors\PostflopRangeEditor.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Tree\DataEditors\PreflopRangeEditor.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Tree\DefaultBetTreeNodeEditor.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Tree\ManualResultsEditor.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Tree\ResultNodeInfo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Tree\RootNodeInfo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Tree\ShowdownNodeInfo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Tree\TreeGrid.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Tree\TreeGridItem.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Tree\TreeGridStart.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Tree\WizardSettings.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\A 1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\A 2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\A 3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\A 4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\A 5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\A 6.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\A 7.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\A 8.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\A 9.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\A 10.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\A j.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\A k.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\A q.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\B 1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\B 2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\B 3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\B 4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\B 5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\B 6.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\B 7.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\B 8.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\B 9.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\B 10.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\B j.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\B k.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\B q.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\C 1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\C 2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\C 3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\C 4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\C 5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\C 6.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\C 7.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\C 8.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\C 9.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\C 10.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\C j.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\C k.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\C q.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\D 1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\D 2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\D 3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\D 4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\D 5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\D 6.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\D 7.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\D 8.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\D 9.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\D 10.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\D j.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\D k.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\D q.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\CARD BACK 1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\CARD BACK 2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\CARD BACK 3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\CARD BACK 4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\expanded.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\collapsed.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\button1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\playerbackground.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\chips_1cent.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\chips_1dollar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\chips_5cent.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\chips_5dollar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\chips_25cent.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\chips_25dollar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\chips_100dollar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\table clear.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Calculator\Cache\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\DefaultNodeIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\PreflopBetIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\RandomBetIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\ResultsNodeIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\RootNodeIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\ShowdownIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\EditGreen32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\background.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\icon_question.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\icon_settings.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\addicon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\deleteicon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\wizard.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
